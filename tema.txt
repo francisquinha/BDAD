@@ -1,0 +1,19 @@
+Tema do trabalho: Base de Dados de uma Escola Secundária
+
+Conteúdo: Informação sobre cursos, disciplinas, alunos, turmas, docentes, funcionários e encarregados de educação.
+
+Utilização: Docentes e funcionários da escola utilizam a BD para consultar, elaborar estatísticas, etc.
+
+Curso: Deve ter nome, descrição, tipo, disciplinas, alunos inscritos, professores associados, professor responsável.
+
+Turma: Deve número, ano, curso, alunos, director de turma.
+
+Disciplina: Deve ter nome, descrição, curso(s) em que é lecionada, ano lectivo, alunos inscritos, professores responsáveis.
+
+Aluno: Deve ter número, nome, BI, data de nascimento, ano e curso em que está inscrito, quem é o encarregado de educação, telefone, morada, notas das disciplinas (do ano atual e de outros, por trimestre).
+
+Docente: Deve ter número, nome, BI, área, qualificações, disciplinas e cursos a que está associado, morada, telefone.
+
+Funcionário: Deve ter número, nome, BI, morada, telefone, função, qualificações.
+
+Encarregado de Educação: Deve ter nome, BI, morada, telefone, aluno(s) por quem é responsável.
