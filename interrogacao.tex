@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												   %
+%	ESCOLA   									   %
+%												   %
+%	Maio 2015  									   %
+%												   %
+%	Angela Cardoso, Rui Costa e Ricardo Lopes	   %
+%   											   %	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,reqno]{report}
+\linespread{1.5}
+
+\usepackage{amsfonts,amsmath,amssymb,indentfirst,mathrsfs,amscd}
+\usepackage[mathscr]{eucal}
+\usepackage[active]{srcltx} %inverse search
+\usepackage{tensor}
+\usepackage[utf8x]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[numbers,square, comma, sort&compress]{natbib}
+\numberwithin{figure}{section}
+\numberwithin{equation}{section}
+\usepackage{scalefnt}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{comment} 
+%\usepackage{tweaklist}
+%\renewcommand{\itemhook}{\setlength{\topsep}{0pt}%
+%	\setlength{\itemsep}{0pt}}
+%\renewcommand{\enumhook}{\setlength{\topsep}{0pt}%
+%	\setlength{\itemsep}{0pt}}
+%\usepackage[colorlinks]{hyperref}
+\usepackage{MnSymbol}
+%\usepackage[pdfpagelabels,pagebackref,hypertexnames=true,plainpages=false,naturalnames]{hyperref}
+\usepackage[naturalnames]{hyperref}
+\usepackage{enumitem}
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\usepackage[official]{eurosym}
+
+\def\Cpp{C\raisebox{0.5ex}{\tiny\textbf{++}}}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  %%%%\vspace*{50\p@}% %%% removed!
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  %%%%%\vspace*{50\p@}% %%% removed!
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+
+\begin{document}
+
+INTERROGAÇÕES
+
+\begin{enumerate}
+	
+	\item Quantos alunos, docentes e encarregados de educação tem a escola?
+	
+	\item Que docentes são simultaneamente encarregados de educação?
+	
+	\item Que alunos vivem na mesma localidade que o seu atual diretor de turma?
+	
+	\item Qual o grau de parentesco mais frequente entre os alunos e os respetivos encarregados de educação?
+	
+	\item Além de `pai' e `mãe', que outros parentescos existem?
+	
+	\item Quantos alunos existem em cada Área?
+	
+	\item Qual é a melhor média da escola e quem são os alunos que têm essa média?
+	
+	\item Para cada disciplina qual a percentagem de alunos aprovados por período letivo?
+	
+	\item No final de cada período, cada diretor de turma deve reunir com os encarregados de educação dos alunos que tiraram negativa a alguma disciplina. Para o período mais recente, liste os pares (diretor de turma, encarregado de educação) que devem reunir nestas circunstâncias, incluindo o horário de contacto, o telefone e o telemóvel do encarregado de educação.
+	
+	\item Quem são os melhores alunos a cada disciplina e qual a sua nota (tendo em consideração apenas notas do final de cada ano letivo)?
+	
+	\item Para cada Área, qual é o nome, o número de telefone e o número de telemóvel do atual coordenador?
+	
+	\item Quantos docentes estão aptos a lecionar cada disciplina?
+	
+	\item Quais as reuniões nas quais os intervenientes têm algum nome em comum?
+	
+	\item Para cada docente qual a percentagem de alunos aprovados por ano lectivo?
+	
+	\item Para cada ano letivo e cada ano escolar, quem são os melhores alunos e qual é a sua média?
+	
+\end{enumerate}
+
+\end{document}
