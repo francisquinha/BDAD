@@ -49,15 +49,32 @@ INSERT INTO pessoa VALUES(7, 'EE02', 'Mariana', 254789650, 125478890,
 	'Rua do Lado Direito', '1978-03-05', '922656541', '252587245', 2);
 INSERT INTO pessoa VALUES(8, 'AL04', 'Joao', 434528796, 257255734, 
 	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(9, 'AL04', 'Angela', 434528796, 257255734, 
+	'Rua da Angela', '2000-02-05', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(10, 'AL05', 'Ricardo', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
+	INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
+	INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
 
 INSERT INTO aluno(id_aluno, ano_admissao, observacoes) VALUES(1, 2010, 'Alergico a amendoins');
 INSERT INTO aluno(id_aluno, ano_admissao) VALUES(2, 2011);
 INSERT INTO aluno(id_aluno, ano_admissao) VALUES(3, 2009);
 INSERT INTO aluno(id_aluno, ano_admissao) VALUES(8, 2009);
+INSERT INTO aluno(id_aluno, ano_admissao) VALUES(9, 2008);
+INSERT INTO aluno(id_aluno, ano_admissao) VALUES(10, 2008);
+INSERT INTO aluno(id_aluno, ano_admissao) VALUES(11, 2007);
 
 INSERT INTO docente VALUES(4, 2012, 'Licenciatura em Linguas');
 INSERT INTO docente VALUES(5, 2011, 'Mestrado em Matematica');
+INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto
 INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
+INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
+INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
+
 
 INSERT INTO encarregado VALUES(6, '10h-11h');
 INSERT INTO encarregado VALUES(7, '14h-18h');
@@ -71,6 +88,11 @@ INSERT INTO ano_letivo VALUES(1, '2012/2013', '2012-09-23', '2013-06-27');
 
 INSERT INTO disciplina VALUES(1, 'MAT12', 'Matematica', NULL, 1);
 INSERT INTO disciplina VALUES(2, 'POT12', 'Portugues', NULL, 1);
+INSERT INTO disciplina VALUES(3, 'FQ11', 'Fisica-Quimica',NULL,1);
+INSERT INTO disciplina VALUES(4, 'EF', 'Educacao Fisica',NULL,1);
+INSERT INTO disciplina VALUES(5, 'AV', 'Artes Visuais',NULL,1);
+INSERT INTO disciplina VALUES(6, 'BIO', 'Biologia',NULL,1);
+
 
 INSERT INTO periodo VALUES(1, 1, 1, '2012-09-23', '2012-12-31');
 INSERT INTO periodo VALUES(2, 2, 1, '2013-01-01', '2013-04-22');
