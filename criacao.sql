@@ -122,7 +122,8 @@ FOREIGN KEY(id_ano_letivo) REFERENCES ano_letivo(id_ano_letivo));
 
 DROP TABLE IF EXISTS ano_letivo;
 CREATE TABLE ano_letivo (
-id_ano_letivo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+id_ano_letivo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+designacao TEXT NOT NULL, 
 data_ini DATETIME NOT NULL, 
 data_fim DATETIME NOT NULL,
 CHECK (data_ini < data_fim));
@@ -179,4 +180,4 @@ sala VARCHAR NOT NULL,
 id_docente INTEGER NOT NULL,
 id_encarregado INTEGER NOT NULL, 
 FOREIGN KEY(id_docente) REFERENCES docente(id_docente),
-FOREIGN KEY(id_encarregado) REFERENCES encarregado(id_encarregado));
+FOREIGN KEY(id_encarregado) REFERENCES encarregado(id_encarregado)); 
