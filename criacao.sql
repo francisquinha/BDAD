@@ -180,4 +180,44 @@ sala VARCHAR NOT NULL,
 id_docente INTEGER NOT NULL,
 id_encarregado INTEGER NOT NULL, 
 FOREIGN KEY(id_docente) REFERENCES docente(id_docente),
-FOREIGN KEY(id_encarregado) REFERENCES encarregado(id_encarregado)); 
+FOREIGN KEY(id_encarregado) REFERENCES encarregado(id_encarregado));
+
+DROP TRIGGER IF EXISTS caduca_coordenador;
+CREATE TRIGGER caduca_coordenador
+AFTER INSERT ON coordenador 
+FOR EACH ROW
+BEGIN
+UPDATE coordenador SET data_fim = date(NEW.data_ini, '-1 day') WHERE data_fim = NULL;
+END;
+
+DROP TRIGGER IF EXISTS caduca_diretor;
+CREATE TRIGGER caduca_diretor
+AFTER INSERT ON diretor 
+FOR EACH ROW
+BEGIN
+	UPDATE diretor SET data_fim = date(NEW.data_ini, '-1 day') WHERE data_fim = NULL;
+END;
+
+DROP TRIGGER IF EXISTS caduca_inscricao;
+CREATE TRIGGER caduca_inscricao
+AFTER INSERT ON inscricao 
+FOR EACH ROW
+BEGIN
+	UPDATE inscricao SET data_fim = NEW.data_ini WHERE data_fim = NULL;
+END;
+
+DROP TRIGGER IF EXISTS caduca_responsavel;
+CREATE TRIGGER caduca_responsavel
+AFTER INSERT ON responsavel 
+FOR EACH ROW
+BEGIN
+	UPDATE responsavel SET data_fim = NEW.data_ini WHERE data_fim = NULL;
+END;
+
+DROP TRIGGER IF EXISTS caduca_docencia;
+CREATE TRIGGER caduca_docencia
+AFTER INSERT ON docencia 
+FOR EACH ROW
+BEGIN
+	UPDATE docencia SET data_fim = NEW.data_ini WHERE data_fim = NULL;
+END;
