@@ -107,7 +107,7 @@ MODELO RELACIONAL
 
 \item \textbf{ano\_letivo} (\underline{id\_ano\_letivo}, designacao, data\_ini, data\_fim)
 
-\item \textbf{periodo} (\underline{id\_periodo}, numero, data\_ini, data\_fim, id\_ano\_letivo $\rightarrow$ ano\_letivo)
+\item \textbf{periodo} (\underline{id\_periodo}, numero, id\_ano\_letivo $\rightarrow$ ano\_letivo, data\_ini, data\_fim)
 
 \item \textbf{frequencia} (\underline{id\_aluno} $\rightarrow$ aluno, \underline{id\_periodo} $\rightarrow$ periodo, \underline{id\_disciplina} $\rightarrow$ disciplina, classificacao)
 

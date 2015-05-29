@@ -16,8 +16,8 @@ DROP TABLE IF EXISTS aptidao;
 DROP TABLE IF EXISTS frequencia;
 DROP TABLE IF EXISTS inscricao;
 DROP TABLE IF EXISTS responsavel;
-DROP TABLE IF EXISTS area;
 DROP TABLE IF EXISTS turma;
+DROP TABLE IF EXISTS area;
 DROP TABLE IF EXISTS disciplina;
 DROP TABLE IF EXISTS periodo;
 DROP TABLE IF EXISTS ano_letivo;
@@ -68,21 +68,21 @@ FOREIGN KEY(id_aluno) REFERENCES pessoa(id_pessoa));
 
 CREATE TABLE encarregado (
 id_encarregado INTEGER PRIMARY KEY NOT NULL, 
-horario_contato VARCHAR ,
+horario_contacto VARCHAR ,
 FOREIGN KEY(id_encarregado) REFERENCES pessoa(id_pessoa));
 
 CREATE TABLE area (
 id_area INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-nome VARCHAR NOT NULL, 
-descricao VARCHAR NOT NULL, 
-tipo VARCHAR NOT NULL);
+nome TEXT NOT NULL, 
+descricao TEXT, 
+tipo TEXT NOT NULL);
 
 CREATE TABLE coordenador (
 id_coordenador INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-data_ini DATETIME DEFAULT CURRENT_DATE, 
-data_fim DATETIME DEFAULT NULL,
 id_docente INTEGER NOT NULL, 
 id_area INTEGER NOT NULL, 
+data_ini DATETIME DEFAULT CURRENT_DATE, 
+data_fim DATETIME DEFAULT NULL,
 FOREIGN KEY(id_docente) REFERENCES docente(id_docente),
 FOREIGN KEY(id_area) REFERENCES area(id_area),
 CHECK (data_ini <= data_fim));
@@ -98,20 +98,20 @@ FOREIGN KEY(id_ano_letivo) REFERENCES ano_letivo(id_ano_letivo));
 
 CREATE TABLE diretor (
 id_diretor INTEGER PRIMARY KEY NOT NULL, 
-data_ini DATETIME DEFAULT CURRENT_DATE, 
-data_fim DATETIME DEFAULT NULL,
 id_docente INTEGER NOT NULL,
 id_turma INTEGER NOT NULL, 
+data_ini DATETIME DEFAULT CURRENT_DATE, 
+data_fim DATETIME DEFAULT NULL,
 FOREIGN KEY(id_docente) REFERENCES docente(id_docente),
 FOREIGN KEY(id_turma) REFERENCES turma(id_turma),
 CHECK (data_ini <= data_fim));
 
 CREATE TABLE inscricao (
 id_inscricao INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-data_ini DATETIME NOT NULL, 
-data_fim DATETIME NOT NULL,
 id_aluno INTEGER NOT NULL, 
 id_turma INTEGER NOT NULL, 
+data_ini DATETIME NOT NULL, 
+data_fim DATETIME DEFAULT NULL,
 FOREIGN KEY(id_aluno) REFERENCES aluno(id_aluno),
 FOREIGN KEY(id_turma) REFERENCES turma(id_turma),
 CHECK (data_ini <= data_fim));
@@ -119,10 +119,10 @@ CHECK (data_ini <= data_fim));
 CREATE TABLE responsavel (
 id_responsavel INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
 parentesco VARCHAR NOT NULL, 
-data_ini DATETIME DEFAULT CURRENT_DATE, 
-data_fim DATETIME DEFAULT NULL,
 id_aluno INTEGER NOT NULL, 
 id_encarregado INTEGER NOT NULL, 
+data_ini DATETIME DEFAULT CURRENT_DATE, 
+data_fim DATETIME DEFAULT NULL,
 FOREIGN KEY(id_aluno) REFERENCES aluno(id_aluno),
 FOREIGN KEY(id_encarregado) REFERENCES encarregado(id_encarregado),
 CHECK (data_ini <= data_fim));
@@ -145,9 +145,9 @@ CHECK (data_ini < data_fim));
 CREATE TABLE periodo (
 id_periodo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
 numero INTEGER NOT NULL, 
+id_ano_letivo INTEGER NOT NULL,
 data_ini DATETIME NOT NULL, 
 data_fim DATETIME NOT NULL,
-id_ano_letivo INTEGER NOT NULL,
 FOREIGN KEY(id_ano_letivo) REFERENCES ano_letivo(id_ano_letivo),
 CHECK (data_ini < data_fim));
 
@@ -164,11 +164,11 @@ CHECK (classificacao > 0 AND classificacao <= 20));
 
 CREATE TABLE docencia (
 id_docencia INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-data_ini DATETIME DEFAULT CURRENT_DATE, 
-data_fim DATETIME DEFAULT NULL,
 id_disciplina INTEGER NOT NULL,
 id_turma INTEGER NOT NULL,
 id_docente INTEGER NOT NULL,
+data_ini DATETIME DEFAULT CURRENT_DATE, 
+data_fim DATETIME DEFAULT NULL,
 FOREIGN KEY(id_disciplina) REFERENCES disciplina(id_disciplina),
 FOREIGN KEY(id_turma) REFERENCES turma(id_turma),
 FOREIGN KEY(id_docente) REFERENCES docente(id_docente),
