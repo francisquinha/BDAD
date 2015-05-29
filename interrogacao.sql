@@ -8,7 +8,7 @@ FROM docente
 UNION
 SELECT count(*) AS numero, 'encarregados' AS pessoas
 FROM encarregado;
-
+/*
 .print ""
 .print "2"
 SELECT pessoa.*
@@ -139,7 +139,7 @@ WHERE reuniao.id_docente = p1.id_pessoa AND reuniao.id_encarregado = p2.id_pesso
 	(p2.nome LIKE '%' + SUBSTRING(p1.nome, 1, INSTR(p1.nome, ' ') - 1) + '%' OR
 	 p2.nome LIKE '%' + SUBSTRING(p1.nome, CHARINDEX(' ',p1.nome) + 1, CHARINDEX(' ',p1.nome) + '%') 
 
-
+*/
 
 				  
 
