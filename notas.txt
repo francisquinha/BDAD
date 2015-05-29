@@ -1,0 +1,10 @@
+
+Contexto
+
+
+
+conceitos - descrever cada classe e as regras que a ela se aplicam, assim como regras de interação entre classes; estruturar;
+
+contexto - explicar como funciona a escola, a alguém que não é da área
+
+processos - ??

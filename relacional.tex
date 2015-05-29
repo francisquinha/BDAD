@@ -85,23 +85,23 @@ MODELO RELACIONAL
 
 \item \textbf{pessoa} (\underline{id\_pessoa}, numero, nome, bi, nif, morada, data\_nasc, telefone, telemovel, id\_cod\_postal $\rightarrow$ codigo\_postal)
 
-\item \textbf{docente} (\underline{id\_pessoa $\rightarrow$ pessoa}, ano\_admissao, qualificacoes)
+\item \textbf{docente} (\underline{id\_docente} $\rightarrow$ pessoa, ano\_admissao, qualificacoes)
 
-\item \textbf{aluno} (\underline{id\_pessoa $\rightarrow$ pessoa}, ano\_admissao, observacoes, media, max\_nota)
+\item \textbf{aluno} (\underline{id\_aluno} $\rightarrow$ pessoa, ano\_admissao, observacoes, media, max\_nota)
 
-\item \textbf{encarregado} (\underline{id\_pessoa $\rightarrow$ pessoa}, horario\_contacto)
+\item \textbf{encarregado} (\underline{id\_encarregado} $\rightarrow$ pessoa, horario\_contacto)
 
 \item \textbf{area} (\underline{id\_area}, nome, descricao, tipo)
 
-\item \textbf{coordenador} (\underline{id\_pessoa$\rightarrow$ docente, id\_area $\rightarrow$ area}, data\_ini, data\_fim)
+\item \textbf{coordenador} (\underline{id\_coordenador}, id\_docente $\rightarrow$ docente, id\_area $\rightarrow$ area, data\_ini, data\_fim)
 
 \item \textbf{turma} (\underline{id\_turma}, numero, ano\_escolar, id\_area $\rightarrow$ area, id\_ano\_letivo $\rightarrow$ ano\_letivo)
 
-\item \textbf{diretor} (\underline{id\_pessoa $\rightarrow$ docente, id\_turma $\rightarrow$ turma}, data\_ini, data\_fim, )
+\item \textbf{diretor} (\underline{id\_diretor}, id\_docente $\rightarrow$ docente, id\_turma $\rightarrow$ turma, data\_ini, data\_fim)
 
-\item \textbf{inscricao} (\underline{id\_pessoa $\rightarrow$ aluno, id\_turma $\rightarrow$ turma}, data\_ini, data\_fim)
+\item \textbf{inscricao} (\underline{id\_inscricao}, id\_aluno $\rightarrow$ aluno, id\_turma $\rightarrow$ turma, data\_ini, data\_fim)
 
-\item \textbf{responsavel} (\underline{id\_pessoa $\rightarrow$ aluno, id\_pessoa $\rightarrow$ encarregado}, parentesco, data\_ini, data\_fim)
+\item \textbf{responsavel} (\underline{id\_responsavel}, id\_aluno $\rightarrow$ aluno, id\_encarregado $\rightarrow$ encarregado, parentesco, data\_ini, data\_fim)
 
 \item \textbf{disciplina} (\underline{id\_disciplina}, codigo, nome, descricao, id\_ano\_letivo $\rightarrow$ ano\_letivo)
 
@@ -109,13 +109,13 @@ MODELO RELACIONAL
 
 \item \textbf{periodo} (\underline{id\_periodo}, numero, data\_ini, data\_fim, id\_ano\_letivo $\rightarrow$ ano\_letivo)
 
-\item \textbf{frequencia} (\underline{id\_pessoa $\rightarrow$ aluno, id\_periodo $\rightarrow$ periodo, id\_disciplina $\rightarrow$ disciplina}, classificacao)
+\item \textbf{frequencia} (\underline{id\_aluno} $\rightarrow$ aluno, \underline{id\_periodo} $\rightarrow$ periodo, \underline{id\_disciplina} $\rightarrow$ disciplina, classificacao)
 
-\item \textbf{docencia} (\underline{id\_disciplina $\rightarrow$ disciplina, id\_turma $\rightarrow$ turma, id\_pessoa $\rightarrow$ docente}, data\_ini, data\_fim)
+\item \textbf{docencia} (\underline{id\_docencia}, id\_disciplina $\rightarrow$ disciplina, id\_turma $\rightarrow$ turma, id\_docente $\rightarrow$ docente, data\_ini, data\_fim)
 
-\item \textbf{aptidao} (\underline{id\_pessoa $\rightarrow$ docente, id\_disciplina $\rightarrow$ disciplina})
+\item \textbf{aptidao} (\underline{id\_docente} $\rightarrow$ docente, \underline{id\_disciplina} $\rightarrow$ disciplina)
 
-\item \textbf{reuniao} (\underline{id\_pessoa $\rightarrow$ docente, id\_pessoa $\rightarrow$ encarregado}, data, hora, sala)
+\item \textbf{reuniao} (\underline{id\_reuniao}, id\_docente $\rightarrow$ docente, id\_encarregado $\rightarrow$ encarregado, data, hora, sala)
 
 \end{itemize}
 
