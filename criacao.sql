@@ -31,16 +31,17 @@ DROP TABLE IF EXISTS docente;
 CREATE TABLE docente (
 id_docente INTEGER PRIMARY KEY NOT NULL, 
 ano_admissao INTEGER NOT NULL, 
-qualificacoes BLOB NOT NULL,
+qualificacoes TEXT NOT NULL,
 FOREIGN KEY(id_docente) REFERENCES pessoa(id_pessoa));
 
 DROP TABLE IF EXISTS aluno;
 CREATE TABLE aluno (
 id_aluno INTEGER PRIMARY KEY NOT NULL, 
 ano_admissao INTEGER NOT NULL, 
-observacoes BLOB,
-media FLOAT,
-max_nota FLOAT,
+observacoes TEXT,
+media FLOAT DEFAULT 0,
+max_nota INTEGER DEFAULT 0,
+num_disc_feitas INTEGER DEFAULT 0,
 FOREIGN KEY(id_aluno) REFERENCES pessoa(id_pessoa));
 
 DROP TABLE IF EXISTS encarregado;
@@ -220,4 +221,19 @@ AFTER INSERT ON docencia
 FOR EACH ROW
 BEGIN
 	UPDATE docencia SET data_fim = NEW.data_ini WHERE data_fim = NULL;
+END;
+
+DROP TRIGGER IF EXISTS media_max_num;
+CREATE TRIGGER media_max_num
+AFTER INSERT ON frequencia
+FOR EACH ROW
+WHEN ((SELECT numero
+	   FROM periodo
+	   WHERE periodo.id_periodo = NEW.id_periodo) = 3
+   	  AND NEW.classificacao >= 10)
+BEGIN
+	UPDATE aluno SET media = media * num_disc_feitas WHERE aluno.id_aluno = NEW.id_aluno;	
+	UPDATE aluno SET num_disc_feitas = num_disc_feitas + 1 WHERE aluno.id_aluno = NEW.id_aluno;
+	UPDATE aluno SET media = (media  + NEW.classificacao) / num_disc_feitas WHERE aluno.id_aluno = NEW.id_aluno;
+	UPDATE aluno SET max_nota = NEW.classificacao WHERE aluno.id_aluno = NEW.id_aluno AND aluno.max_nota < NEW.classificacao;
 END;
