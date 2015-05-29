@@ -51,14 +51,17 @@ INSERT INTO pessoa VALUES(8, 'AL04', 'Joao', 434528796, 257255734,
 	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
 INSERT INTO pessoa VALUES(9, 'AL04', 'Angela', 434528796, 257255734, 
 	'Rua da Angela', '2000-02-05', '954224654', '813527899', 4);
-INSERT INTO pessoa VALUES(10, 'AL05', 'Ricardo', 434528796, 257255734, 
+INSERT INTO pessoa VALUES(10, 'AL05', 'Rui', 434528796, 257255734, 
 	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
-INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
+INSERT INTO pessoa VALUES(11, 'AL06', 'Ricardo', 434528796, 257255734, 
 	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
-	INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
-	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
-	INSERT INTO pessoa VALUES(11, 'AL06', 'Rui', 434528796, 257255734, 
-	'Rua Fernando Pessoa', '2000-02-05', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(12, 'DC03', 'Marta', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '1980-06-21', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(13, 'DC04', 'Pedro', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '1974-11-30', '954224654', '813527899', 4);
+INSERT INTO pessoa VALUES(14, 'DC05', 'Patricia', 434528796, 257255734, 
+	'Rua Fernando Pessoa', '1968-02-015', '954224654', '813527899', 4);
+
 
 INSERT INTO aluno(id_aluno, ano_admissao, observacoes) VALUES(1, 2010, 'Alergico a amendoins');
 INSERT INTO aluno(id_aluno, ano_admissao) VALUES(2, 2011);
@@ -70,10 +73,10 @@ INSERT INTO aluno(id_aluno, ano_admissao) VALUES(11, 2007);
 
 INSERT INTO docente VALUES(4, 2012, 'Licenciatura em Linguas');
 INSERT INTO docente VALUES(5, 2011, 'Mestrado em Matematica');
-INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto
 INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
-INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
-INSERT INTO docente VALUES(6, 2008, 'Licenciatura em Desporto');
+INSERT INTO docente VALUES(12, 2007, 'Licenciatura em Biologia');
+INSERT INTO docente VALUES(13, 2000, 'Doutoramento em Artes Visuais');
+INSERT INTO docente VALUES(14, 1990, 'Licenciatura em Física');
 
 
 INSERT INTO encarregado VALUES(6, '10h-11h');
@@ -104,33 +107,76 @@ INSERT INTO frequencia VALUES(1, 3, 1, 16);
 INSERT INTO frequencia VALUES(1, 1, 2, 9);
 INSERT INTO frequencia VALUES(1, 2, 2, 10);
 INSERT INTO frequencia VALUES(1, 3, 2, 10);
+INSERT INTO frequencia VALUES(1, 1, 3, 12);
+INSERT INTO frequencia VALUES(1, 2, 3, 13);
+INSERT INTO frequencia VALUES(1, 3, 3, 11);
 INSERT INTO frequencia VALUES(2, 1, 1, 15);
 INSERT INTO frequencia VALUES(2, 2, 1, 8);
 INSERT INTO frequencia VALUES(2, 3, 1, 15);
 INSERT INTO frequencia VALUES(2, 1, 2, 17);
 INSERT INTO frequencia VALUES(2, 2, 2, 17);
 INSERT INTO frequencia VALUES(2, 3, 2, 18);
+INSERT INTO frequencia VALUES(2, 1, 4, 15);
+INSERT INTO frequencia VALUES(2, 2, 4, 15);
+INSERT INTO frequencia VALUES(2, 3, 4, 15);
 INSERT INTO frequencia VALUES(3, 1, 1, 8);
 INSERT INTO frequencia VALUES(3, 2, 1, 8);
 INSERT INTO frequencia VALUES(3, 3, 1, 9);
 INSERT INTO frequencia VALUES(3, 1, 2, 10);
 INSERT INTO frequencia VALUES(3, 2, 2, 9);
 INSERT INTO frequencia VALUES(3, 3, 2, 11);
+INSERT INTO frequencia VALUES(3, 1, 5, 8);
+INSERT INTO frequencia VALUES(3, 2, 5, 9);
+INSERT INTO frequencia VALUES(3, 3, 5, 10);
 INSERT INTO frequencia VALUES(8, 1, 1, 18);
 INSERT INTO frequencia VALUES(8, 2, 1, 20);
 INSERT INTO frequencia VALUES(8, 3, 1, 20);
 INSERT INTO frequencia VALUES(8, 1, 2, 10);
 INSERT INTO frequencia VALUES(8, 2, 2, 9);
-INSERT INTO frequencia VALUES(8, 3, 2, 11);
+INSERT INTO frequencia VALUES(8, 3, 2, 11);´
+INSERT INTO frequencia VALUES(8, 1, 6, 12);
+INSERT INTO frequencia VALUES(8, 2, 6, 11);
+INSERT INTO frequencia VALUES(8, 3, 6, 13);
+INSERT INTO frequencia VALUES(9, 1, 2, 19);
+INSERT INTO frequencia VALUES(9, 2, 2, 19);
+INSERT INTO frequencia VALUES(9, 3, 2, 20);
+INSERT INTO frequencia VALUES(9, 1, 4, 18);
+INSERT INTO frequencia VALUES(9, 2, 4, 20);
+INSERT INTO frequencia VALUES(9, 3, 4, 19);
+INSERT INTO frequencia VALUES(9, 1, 6, 17);
+INSERT INTO frequencia VALUES(9, 2, 6, 19);
+INSERT INTO frequencia VALUES(9, 3, 6, 19);
+INSERT INTO frequencia VALUES(10, 1, 1, 18);
+INSERT INTO frequencia VALUES(10, 2, 1, 18);
+INSERT INTO frequencia VALUES(10, 3, 1, 19);
+INSERT INTO frequencia VALUES(10, 1, 3, 19);
+INSERT INTO frequencia VALUES(10, 2, 3, 19);
+INSERT INTO frequencia VALUES(10, 3, 3, 20);
+INSERT INTO frequencia VALUES(10, 1, 5, 19);
+INSERT INTO frequencia VALUES(10, 2, 5, 18);
+INSERT INTO frequencia VALUES(10, 3, 5, 19);
+INSERT INTO frequencia VALUES(11, 1, 1, 17);
+INSERT INTO frequencia VALUES(11, 2, 1, 18);
+INSERT INTO frequencia VALUES(11, 3, 1, 18);
+INSERT INTO frequencia VALUES(11, 1, 4, 19);
+INSERT INTO frequencia VALUES(11, 2, 4, 18);
+INSERT INTO frequencia VALUES(11, 3, 4, 18);
+INSERT INTO frequencia VALUES(11, 1, 6, 19);
+INSERT INTO frequencia VALUES(11, 2, 6, 19);
+INSERT INTO frequencia VALUES(11, 3, 6, 19);
+
 
 INSERT INTO area VALUES(1, 'ciencias', NULL, 'geral');
 INSERT INTO area VALUES(2, 'informatica', NULL, 'tecnologico');
+INSERT INTO area VALUES(2, 'saude', NULL, 'geral');
 
 INSERT INTO turma VALUES(1, '10A', 10, 1, 1);
 INSERT INTO turma VALUES(2, '11B', 11, 2, 1);
+INSERT INTO turma VALUES(3, '12C', 12, 3, 1);
 
 INSERT INTO diretor VALUES(1, 4, 2, '2012-09-23', NULL);
 INSERT INTO diretor VALUES(2, 5, 1, '2012-09-23', NULL);
+INSERT INTO diretor VALUES(2, 12, 3, '2012-09-23', NULL);
 
 INSERT INTO coordenador VALUES(1, 6, 2, '2012-09-23', NULL);
 INSERT INTO coordenador VALUES(2, 5, 1, '2012-09-23', NULL);
@@ -139,6 +185,9 @@ INSERT INTO inscricao VALUES(1, 1, 1, '2012-09-23', NULL);
 INSERT INTO inscricao VALUES(2, 2, 1, '2012-09-23', NULL);
 INSERT INTO inscricao VALUES(3, 3, 2, '2012-09-23', NULL);
 INSERT INTO inscricao VALUES(4, 8, 2, '2012-09-23', NULL);
+INSERT INTO inscricao VALUES(5, 9, 2, '2012-09-23', NULL);
+INSERT INTO inscricao VALUES(6, 10, 3, '2012-09-23', NULL);
+INSERT INTO inscricao VALUES(7, 11, 3, '2012-09-23', NULL);
 
 INSERT INTO aptidao VALUES(4, 1);
 INSERT INTO aptidao VALUES(4, 2);
